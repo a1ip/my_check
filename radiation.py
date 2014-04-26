@@ -1,13 +1,15 @@
 def checkio(data):
-    li = []
-    for i in data:
-        li.extend([str(j) for j in i])
-    s = "".join(li)    
-    #s = "".join([str(i) for i in data])
-    d = {x: s.count(x) for x in set(li)}
-    print(list(d))
-    
-
+    for li in data:
+        v = li[0]
+        for i in range(len(li)):
+            if v == li[i]:
+                li[]
+            
+            
+            
+        
+            
+            
 
 
 
