@@ -8,9 +8,8 @@ checkio(data):
     counting = False 
     
     while(True):
-        x %= width
-        y %= height
-        land = data[y][x]
+        #[x % width] returns endless 0 to width - 1
+        land = data[y][x % width]  
         if land in good_land and not counting:
             counting = True
 
@@ -18,8 +17,7 @@ checkio(data):
             pass
 
         #end while
-        if x >= width and y >= height:
-            break
+        if x%width == width-1 and y == height-1: break
             
             
            
