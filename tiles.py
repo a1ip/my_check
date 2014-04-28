@@ -16,11 +16,11 @@ def checkio(radius):
         for y in range(1, tiles + 1):
             # check for solid tiles
             if (((x**2)+
-                (y**2))**(1/2) <= radius):
+                (y**2))**0.5 <= radius):
                 result[0] += 4
             # check for partial tiles
             elif ((((x-1)**2)+
-                ((y-1)**2))**(1/2) <= radius):
+                ((y-1)**2))**0.5 < radius):
                 result[1] += 4
     return result
 
