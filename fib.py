@@ -12,7 +12,16 @@ def fib2(number):
                  i in range(2, number+1)]
     return fili[-1]
 
+def fib3(number):
+    zero, first, second = 1, 1, 0
+    for i in range(2, number + 1):
+        second = zero + first
+        zero, first = first, second
+    return second
+
 
 if __name__ == "__main__":
-    print(fib(70))
-    print(fib2(70))
+    x = 70
+    print(fib(x))
+    print(fib2(x))
+    print(fib3(x))
