@@ -13,7 +13,7 @@ def fib2(number):
     return fili[-1]
 
 def fib3(number):
-    zero, first, second = 1, 1, 0
+    zero = first = second = 1
     for i in range(2, number + 1):
         second = zero + first
         zero, first = first, second
