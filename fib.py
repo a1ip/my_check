@@ -13,15 +13,14 @@ def fib2(number):
     return fili[-1]
 
 def fib3(number):
-    zero = first = second = 1
+    zero = first = 1
     for i in range(2, number + 1):
-        second = zero + first
-        zero, first = first, second
-    return second
+        zero, first = first, zero + first
+    return first
 
 
 if __name__ == "__main__":
-    x = 70
+    x = 5
     print(fib(x))
     print(fib2(x))
     print(fib3(x))
