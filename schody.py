@@ -9,7 +9,7 @@ def evaluate(neg):
 def checkio(data):
     count = 0
     neg = list() # list of negative numbers
-    data.append(0) #limit conditions
+    data.append(0) #border conditions
     for d in data:
         if d > -1:
             count += d
