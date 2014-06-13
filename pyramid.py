@@ -1,10 +1,21 @@
-def count_gold(data):
+def count_gold2(data):
     result = list(data[-1]) 
     for i in range(len(data)-2, -1, -1):
         for v, value in enumerate(data[i]):
             result[v] = value + max(result[v], result[v+1])
+    return result[0]
+
+
+# I tried to make my code as clear as possible
+# I believe there is no commentary necessary
+# If I am wrong just let me know :)
+def count_gold(data):
+    result = [0 for field in data[-1]] + [0] 
+    for line in reversed(data):
+        for index, field in enumerate(line):
+            result[index] = field + max(result[index],
+                                    result[index+1])
     return result[0] 
-    
         
 
 
