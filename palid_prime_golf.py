@@ -8,7 +8,9 @@ def golf2(n):
 def golf(n):
  while 1:
   n+=1
-  if all(n%i for i in range(2,n))and int(str(n)[::-1])==n:return n
+  if int(str(n)[::-1])==n and all(n%i for i in range(2,n)):return n
+
+golf3=lambda n:min(i for i in range(n+1,6**8) if int(str(i)[::-1])==i and all(i%j for j in range(2,i)))
     
     
 
