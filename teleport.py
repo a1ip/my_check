@@ -1,18 +1,12 @@
 path = ""
 def checkio(ports, start="1"):
-    ports += ","
-    if start not in ports:
-        return ""
-    
-    for port in ports.split(","):
-        if start in port:
-            path = start + checkio(
-                        ports.replace(port + ",", ""),
-                        port.replace(start, ""))
-            return path                   
-##            if (path[-1] == "1" and
-##                set(path) == set("12345678")):
-##                return path
+    if start in ports:
+        ports += ","
+        for port in ports.split(","):
+            if start in port:
+                path = start + checkio(
+                            ports.replace(port + ",", ""),
+                            port.replace(start, ""))
     else:
         return ""
                 
