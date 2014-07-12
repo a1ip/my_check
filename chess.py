@@ -2,21 +2,19 @@ start = set()
 end = set()
 sep = "-"
 
+# "b1" -> (2,1)
+convert = lambda pos: (ord(pos[0])-96, int(pos[1]))
+
 def find_moves(fro):
     pass
 
-def checkio(data, count = 1):
-    data = data.split(sep)
-    start.add(data[0])
-    end.add(data[1])
-    if start & end:
-        return count
-    else:
+
         
 
-    
 
-
+# tah konem
+from itertools import permutations as p
+l = [(x,y) for x,y in p([-2,-1,1,2], 2) if abs(x) != abs(y)]
 
 
 if __name__ == "__main__":
