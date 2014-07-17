@@ -11,7 +11,7 @@ def letter_queue2(seq):
                 pass
     return "".join(que)
 
-def letter_queue(seq):
+def letter_queue__xxx(seq):
     s = ""
     for item in seq:
         if item[-2] == " ":
@@ -20,7 +20,7 @@ def letter_queue(seq):
             s = s[1:]
     return s
 
-
+letter_queue = lambda seq: "".join(sum(([c[-1]] if c[-2] else [c[1:]] for c in seq),[]))
 
 
 from collections import deque #japoncovo

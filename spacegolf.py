@@ -1,5 +1,5 @@
 from itertools import permutations as t;import math
-def golf(s,r=[]):
+def golf2(s,r=[]):
  for p in t(s):
   i=j=c=0
   for x,y in p:c+=math.hypot(i-x,j-y);i,j=x,y

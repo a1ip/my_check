@@ -1,9 +1,10 @@
+check = set("12345678")
 def checkio(ports, path="1"):
     last = path[-1]
-    if last == "1" and set(path) == set("12345678"):
+    if last == "1" and set(path) == check:
         return path
     elif last not in ports:
-        raise ValueError("No more to go!")
+        raise ValueError("No way to go!")
     ports = ports.split(",")
     for port in ports:
         if last in port:
@@ -11,17 +12,20 @@ def checkio(ports, path="1"):
                 p = ports[:]
                 p.remove(port)
                 return checkio(",".join(p),
-                               path + port.replace(last,""))
+                               path +
+                               port.replace(last,""))
             except ValueError:
                 continue
-    raise ValueError("Iteration failed!")
+    # If every case has at least one solution OK
+    # or according to samurai rule exception is thrown :)
+    raise ValueError("This iteration has no solution!")
     
                                
-            
-    
+
     
                   
-                         
+
+    
     
 
 
