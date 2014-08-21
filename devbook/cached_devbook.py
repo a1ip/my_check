@@ -52,8 +52,8 @@ for i in range(10):
 
 
 
-scope = (1, 1000) # funkční obor 
-repeat = 500*100   # počet volání funkce
+scope = (1000, 1010) # funkční obor 
+repeat = 20   # počet volání funkce
 
 # Vypočítáme vhodnost
 print("Vhodnost: {}".format(round(repeat/(scope[1]-scope[0]), 1)))
