@@ -1,15 +1,16 @@
+from time import sleep
+from threading import Thread
+def vypis():
+    for c in "Text k vypsaní.":
+        print(c)
+        sleep(1)
 
-def nic(obj):
-    obj(test)
-    class Nic():
-        pass
-    return Nic
 
-@nic
-class Test():
-    def __init__(self, test):
-        pass
-        
+Thread(target=vypis).start()
 
-t = Test()
-print(t)
+print("Hlavní vlákno.")
+sleep(2)
+print("Tady můžeš pokračovat dál...")
+sleep(1)
+print("A tak dále...")
+      
