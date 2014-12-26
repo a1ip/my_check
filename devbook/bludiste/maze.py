@@ -3,8 +3,9 @@ from random import shuffle
 from operator import add
 
 
-DISTANCE = 20                           # Rozestup mezi body bludiště
-WIDTH = HEIGHT = DISTANCE * 30          # Bludiště by mělo být násobkem DISTANCE
+DISTANCE = 20                                   # Rozestup mezi body bludiště
+WIDTH, HEIGHT = DISTANCE * 10, DISTANCE * 20    # Bludiště by mělo být násobkem DISTANCE
+SIZE = max(HEIGHT, WIDTH)
 ORTHO = [(DISTANCE,0), (0,DISTANCE),    # Kolmé cesty od bodu X,Y
          (-DISTANCE,0),(0,-DISTANCE)]   # vlevo, vpravo, dolů, nahoru 
 

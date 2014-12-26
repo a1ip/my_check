@@ -18,7 +18,7 @@ scr = t.screen
 scr.bgcolor("blue")
 # Nastavíme souřadnicový systém.
 scr.setworldcoordinates(-DISTANCE, -DISTANCE,
-                        WIDTH+DISTANCE, HEIGHT+DISTANCE)
+                        SIZE+DISTANCE, SIZE+DISTANCE)
 scr.tracer(SPEED,0)
 t.hideturtle()
 
