@@ -1,10 +1,10 @@
 from itertools import product
-from random import shuffle
+from random import shuffle, randrange
 from operator import add
 
 
-DISTANCE = 20                                   # Rozestup mezi body bludiště
-WIDTH, HEIGHT = DISTANCE * 10, DISTANCE * 20    # Bludiště by mělo být násobkem DISTANCE
+DISTANCE = 10                                   # Rozestup mezi body bludiště
+WIDTH, HEIGHT = DISTANCE * 30, DISTANCE * 60    # Bludiště by mělo být násobkem DISTANCE
 SIZE = max(HEIGHT, WIDTH)
 ORTHO = [(DISTANCE,0), (0,DISTANCE),    # Kolmé cesty od bodu X,Y
          (-DISTANCE,0),(0,-DISTANCE)]   # vlevo, vpravo, dolů, nahoru 
@@ -16,8 +16,11 @@ def add_point(point, increment):
     >>> True
     """
     return tuple(map(add, point, increment))
+
+
     
-def generate_maze(*, start=(0,0)):
+    
+def generate_maze(*, start=(0,0), random=100):
     """
     Generátor hran bludiště.
     Ze startu lze dojít do kteréhokoliv bodu bludiště,
@@ -29,10 +32,13 @@ def generate_maze(*, start=(0,0)):
                                        range(0,HEIGHT+DISTANCE,DISTANCE))}
     # Ze bodů v starts vyrážíme do dalších bodů
     starting_points = {start}
+    count = 0
     while points:
+        count += 1
         ends = set()
         for point in starting_points:
-            shuffle(ways)   # Zamícháme směry.
+            if not count % random:
+                shuffle(ways)   # Zamícháme směry.
             # POkusíme se jít každým směrem.
             for way in ways:
                 new_point = add_point(point, way)
