@@ -4,7 +4,7 @@ from operator import add
 
 
 DISTANCE = 10                                   # Rozestup mezi body bludiště
-WIDTH, HEIGHT = DISTANCE * 30, DISTANCE * 60    # Bludiště by mělo být násobkem DISTANCE
+WIDTH, HEIGHT = DISTANCE * 30, DISTANCE * 30    # Bludiště by mělo být násobkem DISTANCE
 SIZE = max(HEIGHT, WIDTH)
 ORTHO = [(DISTANCE,0), (0,DISTANCE),    # Kolmé cesty od bodu X,Y
          (-DISTANCE,0),(0,-DISTANCE)]   # vlevo, vpravo, dolů, nahoru 
@@ -37,8 +37,8 @@ def generate_maze(*, start=(0,0), random=100):
         count += 1
         ends = set()
         for point in starting_points:
-            if not count % random:
-                shuffle(ways)   # Zamícháme směry.
+            
+            shuffle(ways)   # Zamícháme směry.
             # POkusíme se jít každým směrem.
             for way in ways:
                 new_point = add_point(point, way)
